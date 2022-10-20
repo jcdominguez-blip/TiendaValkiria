@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Item from './components/Item';
 import AppContainer from './components/AppContainer';
 import Navbar from './components/Navbar';
-import Button from"./components/Button"
+import Footer from "./components/Footer"
+
 
 
 
@@ -55,12 +56,8 @@ function App() {
       </main>
   
     {/* Fin Cards boop--------*/}
-      <footer className='footer'>
-        <h3 className='footer__item'>Politicas de privacidad</h3>
-        <h3>Terminos y condiciones</h3>
-        <h3>Otras cosas</h3>
-      </footer>
-    </div>
+      <Footer/>
+</div>
   );
 }
 
