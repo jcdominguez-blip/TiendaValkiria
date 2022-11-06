@@ -1,48 +1,55 @@
 
+import { useEffect, useState } from "react";
 import Item from "./Item";
+import { getProduct} from "../api/productos";
 const AppContainer = () => {
 
   //toda logica de peticion
-    return   <div className='conteiner'>   
-    
-    
-    <div className='products row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-    
-    
-    
-        <div class="col">
-            <Item imagen="https://d368r8jqz0fwvm.cloudfront.net/32857-product_lg/calza-de-mujer-joyce.jpg"
-            nombre="Calzas camo RX23"
-            description="W Tig es un nuevo producto para Mujer de adidas. Te invitamos a ver las imágenes para apreciar más detalles desde diferentes ángulos. Si ya conocés W Tig podés dejar una reseña abajo; siempre nos encanta conocer tu opinión."
-            precio="$2300"
-            boton="Comprar"  
-            />  
-        </div>
+    const [productos, setProductos]= useState([]);
 
-        
+    useEffect(()=>{
+        getProduct()
+            .then((items)=> setProductos (items))
+            .catch((e) => console.log(e ));
 
-        <div className="col">
-            <Item imagen="https://d368r8jqz0fwvm.cloudfront.net/17277-product_lg/calza-de-mujer-spy.jpg"
-            nombre="Calzas camo RX23"
-            description="W Tig es un nuevo producto para Mujer de adidas. Te invitamos a ver las imágenes para apreciar más detalles desde diferentes ángulos. Si ya conocés W Tig podés dejar una reseña abajo; siempre nos encanta conocer tu opinión."
-            precio="$4300"
-            boton="Comprar"  
-        />     
-        </div>
+    }, []);
 
 
-        <div className="col">
-            <Item imagen="https://d368r8jqz0fwvm.cloudfront.net/24381-product_lg/calza-de-mujer-balance.jpg"
-            nombre="Calzas camo RX23"
-            description="W Tig es un nuevo producto para Mujer de adidas. Te invitamos a ver las imágenes para apreciar más detalles desde diferentes ángulos. Si ya conocés W Tig podés dejar una reseña abajo; siempre nos encanta conocer tu opinión."
-            precio="$6300"
-            boton="Comprar"  
-        />
 
-        </div>  
-    </div>
+
+    return(     
+    
+    <div className='products row row-cols-1 row-cols-sm-2 row-cols-md-3 g-1'>        
+    {productos.map ((productos) => {
+
+    return( 
+    <Item
+    key={productos.id} 
+    imagen={productos.imagen}    
+    nombre={productos.nombre}
+    description={productos.description}    
+    precio={productos.precio}
+    boton={productos.boton}    
+    />
+    
+    );
+
+    })}
+    {
+
+    }
+
+    
 </div>
 
-} 
+    );
+};
+    
+    
+    
+    
+    
+
+    
 
 export default AppContainer;

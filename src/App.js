@@ -7,9 +7,6 @@ import Navbar from './components/Navbar';
 import Footer from "./components/Footer"
 
 
-
-
-
 function App() {
   return (
     <div className="App">
@@ -22,7 +19,9 @@ function App() {
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={"https://images.pexels.com/photos/1319417/pexels-photo-1319417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} className="d-block w-100  " alt=""/>
+      
+      <img src={"https://i0.wp.com/boostsports.com.uy/wp-content/uploads/2019/06/image-header-nuestros-servicios.jpg?ssl=1"} className="d-block w-100  " alt=""/>
+      
     </div>
     <div className="carousel-item">
       <img src={"https://images.pexels.com/photos/3775603/pexels-photo-3775603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} className="d-block w-100 " alt="..."/>
@@ -31,6 +30,7 @@ function App() {
       <img src={"https://images.pexels.com/photos/864939/pexels-photo-864939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} className="d-block w-100 " alt="..."/>
     </div>
   </div>
+  <p className='h2_img'><a className='descuento'>50%</a> Cyber monday en productos seleccionados</p>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
     <span className="visually-hidden">Previous</span>
